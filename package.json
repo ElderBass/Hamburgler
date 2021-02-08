@@ -1,26 +1,30 @@
 {
-  "name": "Hamburgler",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ElderBass/Hamburgler.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ElderBass/Hamburgler/issues"
-  },
-  "homepage": "https://github.com/ElderBass/Hamburgler#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "express-handlebars": "^5.2.0",
-    "mysql": "^2.18.1"
-  }
+    "name": "Hamburgler",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js",
+        "watch": "nodemon server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ElderBass/Hamburgler.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ElderBass/Hamburgler/issues"
+    },
+    "homepage": "https://github.com/ElderBass/Hamburgler#readme",
+    "dependencies": {
+        "express": "^4.17.1",
+        "express-handlebars": "^5.2.0",
+        "mysql": "^2.18.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.7"
+    }
 }
