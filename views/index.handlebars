@@ -1,13 +1,15 @@
 
-<h2>Menu</h2>
+<h2><strong>Menu</strong></h2>
 
 
 <hr>
 {{#each burgers }}
-  
-    <h3><strong>{{burger_name}}</strong></h3>
-    <p>ID:  {{id}}</p>
-    <p>Devoured?   {{devoured}}</p>
+<div class='d-flex flex-row' id='burger'>
+    <h3 class='p-2'>{{burger_name}}</h3>
+    <button class='devourBtn p-2 btn btn-danger' id={{id}}>Devour This Burger!</button>
+</div>
 
 {{/each}}
+
+<hr>
 
