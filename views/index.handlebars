@@ -1,46 +1,43 @@
-
-<h2><strong>Menu</strong></h2>
-
-
-<hr>
-<ol>
-{{#each burgers }}
-<li>
-    <div class='d-flex flex-row' id='burgerDiv'>
-        <h3 class='p-2'>{{this.burger_name}}</h3>
-        <button class='devourBtn p-2 btn btn-danger' value='{{burger_name}}' data-id={{this.id}}>Devour This Burger!</button>
-    </div>
-</li>
-{{/each}}
-</ol>
-
-<hr>
-
-
-<script type='text/javascript'>
-/*
-$('.devourBtn').on('click', function (event) {
-    event.preventDefault();
-    console.log('hello there')
-
-    var devouredBurger = {
-        burger_name: 
-    }
-
-    var id = $(this).data("id");
-
-    // Send the POST request.
-    $.ajax("/api/burgers" + id, {
-      type: "PUT",
-      data: devouredBurger
-    }).then(
-      function() {
-        console.log(`devoured the ${this.name} burger`);
-        // Reload the page to get the updated list
-        location.assign("/");
-      }
-    );
-})*/
-
-</script>
-
+<div class='col-lg-6 col-md-6 col-sm-12'>
+      <div class='container float-left' id='menu'>
+        <h2><strong>Menu</strong></h2>
+        <hr>
+        {{!-- the non-devoured burgers will go here --}}
+        <ol>
+          {{#each burgers }}
+            {{#unless devoured}}
+              {{> burgers/burger-block devoured=false}}
+            {{/unless}}
+          {{/each}}
+        </ol>
+        <hr>
+      </div>
+  </div>
+  <div class='col-lg-6 col-md-6 col-sm-12'>
+      <div class='row'>
+      <div class='container float-right' id='form-display'>
+          <h3><strong>Flip a Burger to the Menu!</strong></h3>
+          <form action="/" method="POST" id='burgerInput'> <!--Instead of form being the route, I could just do an ajax call on submit button click -->
+              <textarea type="text" name="burger" placeholder='Eat Me'></textarea>
+              <button type="submit" id='submitBtn' class='btn btn-danger'>Submit</button>
+                  {{!-- <input type="text" class="form-control" placeholder="EAT ME" aria-label="Burger Name" aria-describedby="button-addon2">
+                  <button class="btn btn-danger" type="submit" id="button-addon2">Submit</button> --}}
+          </form>
+      </div>
+      </div>
+      <hr>
+      <div class='row'>
+          <div class='container' id='scarfed' >
+              <h3><strong>Burgers You've Scarfed</strong></h3>
+              <hr>
+              <ul id='devouredList'>
+                  {{#each burgers}}
+                    {{#if devoured}}
+                      {{> burgers/burger-block devoured=true}}
+                    {{/if}}
+                  {{/each}}
+              </ul>
+              <h6 id='fillerMessage'>Bro do u even lift...burgers to your face? You haven't eaten any yet!</h6>
+          </div>
+      </div>
+  </div>

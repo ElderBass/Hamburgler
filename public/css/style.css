@@ -26,6 +26,32 @@ header {
     margin-top: 30px;
 }
 
+#form-display {
+    align-items: center;
+    border: solid 5px rgb(182, 8, 8);
+    margin-top: 10px;
+    padding: 10px;
+}
+
+#submitBtn {
+    margin-bottom: 35px;
+}
+
+hr {
+    border: solid 1px rgb(182, 8, 8);
+}
+
+#menu,
+#scarfed {
+    padding: 10px;
+    background-color: rgb(229, 240, 86);
+    border: solid 5px rgb(77, 36, 2);
+}
+
+#burgerInput {
+    margin-top: 20px;
+}
+
 .float-left {
     float: left;
 }
@@ -39,7 +65,15 @@ header {
     margin-bottom: 8px;
 }
 
+#devoured {
+    margin-top: 20px;
+}
+
 .devourBtn {
     height: 60%;
     margin-left: 20px;
+}
+
+.hide {
+    display: none;
 }

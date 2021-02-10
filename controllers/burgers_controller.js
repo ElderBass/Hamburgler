@@ -21,6 +21,7 @@
 
 var express = require("express");
 
+//this method is part of express which allows us to set up 'get', 'post', and 'put' routes
 var router = express.Router();
 
 // Import the model (cat.js) to use its database functions.
@@ -54,10 +55,7 @@ router.put("/api/burgers/:id", function(req, res) {
             devoured: 1
         }, condition,
         function(result) {
-            // if (result.changedRows === 0) {
-            //     // If no rows were changed, then the ID must not exist, so 404
-            //     return res.status(404).end();
-            // }
+
             res.status(200).end();
         }
     );
