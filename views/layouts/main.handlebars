@@ -26,6 +26,7 @@
             </div>
         </div>
         <div class='col-lg-6 col-md-6 col-sm-12'>
+            <div class='row'>
             <div class='container float-right' id='form-display'>
                 <form action="/" method="POST">
                 <h3>Flip a Burger to the Menu!</h3>
@@ -33,14 +34,21 @@
                     <button type="submit" class='btn btn-danger'>Submit</button>
                 </form>
             </div>
+            </div>
+            <hr>
+            <div class='row'>
+                <div class='container' >
+                    <h3>Burger's You've Scarfed</h3>
+                    <hr>
+                    <ol id='#devoured'>
+
+                    </ol>
+                    <h6 id='fillerMessage'>Bro do u even lift...burgers to your face? You haven't eaten any yet!</h6>
+                </div>
+            </div>
         </div>
     </div>
-    </div>
-        
-    
-
-
-    
+</div>
 
 
 </body>
@@ -89,36 +97,58 @@ header {
     margin-top: 8px;
     margin-bottom: 8px;
 }
+#devoured {
+    margin-top: 20px;
+}
 
 .devourBtn {
     height: 60%;
     margin-left: 20px;
 }
+.hide {
+    display:none;
+}
+
 </style>
 
 <script type='text/javascript'>
 
-$('.devourBtn').on('click', function (event) {
-    event.preventDefault();
-    console.log('hello there')
-    
-    {{!-- var devouredBurger = {
-      author: $("#auth").val().trim(),
-      quote: $("#quo").val().trim()
-    }; --}}
 
-    var id = $(this).data("id");
+$(function(){
+  
+    $('.devourBtn').on('click', function (event) {
+        event.preventDefault();
+          
+        var id = $(this).data("id");
 
-    // Send the POST request.
-    $.ajax("/api/" + id, {
-      type: "PUT",
-    }).then(
-      function() {
-        console.log(`devoured the ${this.name} burger`);
-        // Reload the page to get the updated list
-        location.assign("/");
-      }
-    );
+        var filler = $('#fillerMessage');
+
+        filler.addClass('hide'); 
+        var devouredList = $('#devoured');  
+
+        console.log(id)
+        console.log("This.value: " + $(this).val());
+
+        var devourMessage = $('<li>');
+        devourMessage.text($(this).val());
+
+        devouredList.prepend(devourMessage);
+
+        var devoured = {
+            devoured: 1
+        }
+
+        $.ajax("/api/burgers/" + id, {
+        type: "PUT",
+        data: devoured
+        }).then(
+        function() {
+            console.log(`devoured the burger`);
+            // Reload the page to get the updated list
+            location.assign("/");
+        }
+        );
+    })
 })
 
 </script>

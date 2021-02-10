@@ -17,22 +17,6 @@ app.set("view engine", "handlebars");
 
 var PORT = process.env.PORT || 8080;
 
-/*
-app.get("/", function(req, res) {
-    orm.selectAll(req, res);
-})
-
-//this works
-app.post('/', function(req, res) {
-    console.log(req.body.burger);
-    orm.insertOne(req, res);
-})
-
-app.put('/api/:id', function(req, res) {
-    orm.updateOne(req, res);
-})
-*/
-
 app.use(routes)
 
 app.listen(PORT, function() {

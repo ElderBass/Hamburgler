@@ -6,9 +6,9 @@
 <ol>
 {{#each burgers }}
 <li>
-    <div class='d-flex flex-row' id='burger'>
+    <div class='d-flex flex-row' id='burgerDiv'>
         <h3 class='p-2'>{{this.burger_name}}</h3>
-        <button class='devourBtn p-2 btn btn-danger' name='{{burger_name}}' data-id={{this.id}}>Devour This Burger!</button>
+        <button class='devourBtn p-2 btn btn-danger' value='{{burger_name}}' data-id={{this.id}}>Devour This Burger!</button>
     </div>
 </li>
 {{/each}}
@@ -18,21 +18,21 @@
 
 
 <script type='text/javascript'>
-
+/*
 $('.devourBtn').on('click', function (event) {
     event.preventDefault();
     console.log('hello there')
-    
-    {{!-- var devouredBurger = {
-      author: $("#auth").val().trim(),
-      quote: $("#quo").val().trim()
-    }; --}}
+
+    var devouredBurger = {
+        burger_name: 
+    }
 
     var id = $(this).data("id");
 
     // Send the POST request.
-    $.ajax("/api/" + id, {
+    $.ajax("/api/burgers" + id, {
       type: "PUT",
+      data: devouredBurger
     }).then(
       function() {
         console.log(`devoured the ${this.name} burger`);
@@ -40,7 +40,7 @@ $('.devourBtn').on('click', function (event) {
         location.assign("/");
       }
     );
-})
+})*/
 
 </script>
 
