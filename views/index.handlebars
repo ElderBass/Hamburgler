@@ -16,3 +16,31 @@
 
 <hr>
 
+
+<script type='text/javascript'>
+
+$('.devourBtn').on('click', function (event) {
+    event.preventDefault();
+    console.log('hello there')
+    
+    {{!-- var devouredBurger = {
+      author: $("#auth").val().trim(),
+      quote: $("#quo").val().trim()
+    }; --}}
+
+    var id = $(this).data("id");
+
+    // Send the POST request.
+    $.ajax("/api/" + id, {
+      type: "PUT",
+    }).then(
+      function() {
+        console.log(`devoured the ${this.name} burger`);
+        // Reload the page to get the updated list
+        location.assign("/");
+      }
+    );
+})
+
+</script>
+

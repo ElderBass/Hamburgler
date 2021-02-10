@@ -44,7 +44,7 @@
 
 
 </body>
-    <script src='server.js'></script>
+    {{!-- <script src='server.js'></script> --}}
 </html>
 
 <style>
@@ -54,7 +54,7 @@
 }
 
 body {
-    background-color: coral;
+    background-color:  rgb(245, 132, 98);
     text-align: center;
     color: rgb(182, 8, 8)
 }
@@ -110,7 +110,7 @@ $('.devourBtn').on('click', function (event) {
     var id = $(this).data("id");
 
     // Send the POST request.
-    $.ajax("/" + id, {
+    $.ajax("/api/" + id, {
       type: "PUT",
     }).then(
       function() {

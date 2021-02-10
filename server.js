@@ -1,7 +1,9 @@
 var express = require("express");
 var exphbs = require("express-handlebars");
 
-var orm = require('./config/orm.js');
+var routes = require('./controllers/burgers_controller.js')
+
+//var orm = require('./config/orm.js');
 
 var app = express();
 
@@ -15,7 +17,7 @@ app.set("view engine", "handlebars");
 
 var PORT = process.env.PORT || 8080;
 
-
+/*
 app.get("/", function(req, res) {
     orm.selectAll(req, res);
 })
@@ -26,14 +28,12 @@ app.post('/', function(req, res) {
     orm.insertOne(req, res);
 })
 
-//let devourBtn = document.body.querySelectorAll('.devourBtn');
+app.put('/api/:id', function(req, res) {
+    orm.updateOne(req, res);
+})
+*/
 
-
-//devourBtn.on('click', function() {
-app.put('/:id', function(req, res) {
-        orm.updateOne(req, res);
-    })
-    //})
+app.use(routes)
 
 app.listen(PORT, function() {
     // Log (server-side) when our server has started
