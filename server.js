@@ -8,6 +8,8 @@ var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(express.static(__dirname + '/assets'));
+
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
@@ -18,7 +20,7 @@ app.get("/", function(req, res) {
     orm.selectAll(req, res);
 })
 
-
+//this works
 app.post('/', function(req, res) {
     console.log(req.body.burger);
     orm.insertOne(req, res);
@@ -28,7 +30,7 @@ app.post('/', function(req, res) {
 
 
 //devourBtn.on('click', function() {
-app.post('/', function(req, res) {
+app.put('/:id', function(req, res) {
         orm.updateOne(req, res);
     })
     //})

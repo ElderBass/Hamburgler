@@ -14,7 +14,8 @@
 </head>
 <body>
     <header>
-        <img src="http://www.clker.com/cliparts/o/P/M/7/4/l/cheese-burger-md.png" id='burgerArt' alt='Cheese Burger clip art'/>
+        {{!-- <img src="http://www.clker.com/cliparts/o/P/M/7/4/l/cheese-burger-md.png" id='burgerArt' alt='Cheese Burger clip art'/> --}}
+        <img src='../../assets/burger-clipart-md.png' alt='Cheeseburger Icon' id='burgerArt'/>
         <h1><span></span>Eat-Da-Burger</h1>
     </header>
     <div class='container mainContainer'>
@@ -27,7 +28,7 @@
         <div class='col-lg-6 col-md-6 col-sm-12'>
             <div class='container float-right' id='form-display'>
                 <form action="/" method="POST">
-                <h3>Add a Burger to the Menu!</h3>
+                <h3>Flip a Burger to the Menu!</h3>
                     <textarea type="text" name="burger" placeholder='Eat Me'></textarea>
                     <button type="submit" class='btn btn-danger'>Submit</button>
                 </form>
@@ -43,51 +44,81 @@
 
 
 </body>
-    <script src='../../server.js'></script>
+    <script src='server.js'></script>
 </html>
 
 <style>
 
-    * {
+* {
     font-family: 'Yusei Magic', sans-serif;
-    
-    }
+}
 
-    body {
-        {{!-- align-items: center; --}}
-        background-color: coral;
-        text-align: center;
-        color: rgb(182, 8, 8)
-    }
-    header {
-        background-color: rgb(77, 36, 2);
-        color:rgb(235, 252, 0);
-        padding: 25px;
-    }
-    #burgerArt {
-        width:300px;
-        height:150px;
-        margin-bottom: 10px;
-    }
-    .mainContainer {
-        display: inline-block;
-        align-items: center;
-        margin-top: 30px;
-    }
-    .float-left {
-        float: left;
-    }
-    .float-right {
-        float: right;
-    }
-    #burger{
-        margin-top: 8px;
-        margin-bottom: 8px;
-    }
-    .devourBtn {
-        height: 60%;
-        margin-left: 20px;
-    }
-   
-   
+body {
+    background-color: coral;
+    text-align: center;
+    color: rgb(182, 8, 8)
+}
+
+header {
+    background-color: rgb(77, 36, 2);
+    color: rgb(235, 252, 0);
+    padding: 25px;
+}
+
+#burgerArt {
+    width: 300px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.mainContainer {
+    display: inline-block;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+#burger {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.devourBtn {
+    height: 60%;
+    margin-left: 20px;
+}
 </style>
+
+<script type='text/javascript'>
+
+$('.devourBtn').on('click', function (event) {
+    event.preventDefault();
+    console.log('hello there')
+    
+    {{!-- var devouredBurger = {
+      author: $("#auth").val().trim(),
+      quote: $("#quo").val().trim()
+    }; --}}
+
+    var id = $(this).data("id");
+
+    // Send the POST request.
+    $.ajax("/" + id, {
+      type: "PUT",
+    }).then(
+      function() {
+        console.log(`devoured the ${this.name} burger`);
+        // Reload the page to get the updated list
+        location.assign("/");
+      }
+    );
+})
+
+</script>
