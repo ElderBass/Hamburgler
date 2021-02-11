@@ -5,7 +5,7 @@ $(function() {
     let filler = $('#fillerMessage');
     //if our list of devoured burgers is populated at all, we will hide the filler message
     if (list.children().length > 0) {
-        console.log("this fuck has children")
+        
         filler.addClass('hide');
     }
     //add on-click function to the 'devour' button
