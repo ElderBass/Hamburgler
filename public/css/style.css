@@ -26,15 +26,19 @@ header {
     margin-top: 30px;
 }
 
-#form-display {
-    align-items: center;
-    border: solid 5px rgb(182, 8, 8);
-    margin-top: 10px;
-    padding: 10px;
+#firstColumn {
+    margin-right: 30px;
 }
 
-#submitBtn {
-    margin-bottom: 35px;
+#secondColumn {
+    margin-left: 30px;
+}
+
+#form-display {
+    align-items: center;
+    border: solid 5px rgb(77, 36, 2);
+    margin-top: 10px;
+    padding: 10px;
 }
 
 hr {

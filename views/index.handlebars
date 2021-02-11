@@ -1,4 +1,4 @@
-<div class='col-lg-6 col-md-6 col-sm-12'>
+<div class='col-lg-6 col-md-6 col-sm-12 firstColumn'>
       <div class='container float-left' id='menu'>
         <h2><strong>Menu</strong></h2>
         <hr>
@@ -13,13 +13,14 @@
         <hr>
       </div>
   </div>
-  <div class='col-lg-6 col-md-6 col-sm-12'>
+  <div class='col-lg-6 col-md-6 col-sm-12 secondColumn'>
       <div class='row'>
       <div class='container float-right' id='form-display'>
           <h3><strong>Flip a Burger to the Menu!</strong></h3>
           <form action="/" method="POST" id='burgerInput'> <!--Instead of form being the route, I could just do an ajax call on submit button click -->
               <textarea type="text" name="burger" placeholder='Eat Me'></textarea>
-              <button type="submit" id='submitBtn' class='btn btn-danger'>Submit</button>
+              <br>
+              <button type="submit" id='submitBtn' class='btn btn-danger'>Flip Dat Burger</button>
                   {{!-- <input type="text" class="form-control" placeholder="EAT ME" aria-label="Burger Name" aria-describedby="button-addon2">
                   <button class="btn btn-danger" type="submit" id="button-addon2">Submit</button> --}}
           </form>
