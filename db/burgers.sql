@@ -1,4 +1,4 @@
-DROP DATABASE burgers_db;
+--Pretty straightforward database of burgers--
 
 CREATE DATABASE burgers_db;
 
@@ -10,9 +10,3 @@ CREATE TABLE burgers (
     devoured BOOLEAN default 0
 );
 
-
-INSERT INTO burgers (burger_name) 
-VALUES ("Krabby Patty"), ("Mt. Mushmore"), ("The OG"), ("Not a Nutter Burger"), ("Jr. Bacon Chee");
-
-
-select * from burgers;

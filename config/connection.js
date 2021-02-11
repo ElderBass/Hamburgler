@@ -1,3 +1,4 @@
+//pretty basic/standard here, just setting up the connection to our database
 const { builtinModules } = require("module");
 var mysql = require('mysql');
 

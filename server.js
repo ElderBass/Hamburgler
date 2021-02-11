@@ -11,6 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
 //allow express to use our static files in the public folder ie the script.js and css
 app.use(express.static('public'));
 

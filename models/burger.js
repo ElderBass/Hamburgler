@@ -1,6 +1,7 @@
+//import our orm object
 var orm = require('../config/orm.js');
 
-
+//this file is very similar to the orm, just putting some methods into an object that we'll export to our controller file to be routed
 var burger = {
     selectAll: function(cb) {
         orm.selectAll("burgers", function(res) {

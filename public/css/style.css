@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: rgb(245, 132, 98);
+    background-color: rgb(250, 66, 66);
     text-align: center;
     color: rgb(182, 8, 8)
 }
@@ -15,8 +15,8 @@ header {
 }
 
 #burgerArt {
-    width: 300px;
-    height: 150px;
+    width: 200px;
+    height: 100px;
     margin-bottom: 10px;
 }
 
@@ -37,7 +37,6 @@ header {
 #form-display {
     align-items: center;
     border: solid 5px rgb(77, 36, 2);
-    margin-top: 10px;
     padding: 10px;
 }
 
@@ -46,6 +45,7 @@ hr {
 }
 
 #menu,
+#form-display,
 #scarfed {
     padding: 10px;
     background-color: rgb(229, 240, 86);
