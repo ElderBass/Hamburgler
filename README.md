@@ -5,7 +5,7 @@ An application for devouring burgers, by Seth Zygarlicke.
 
 GitHub Repository: https://github.com/ElderBass/Hamburgler.git
     
-Heroku: https://drive.google.com/file/d/1aFBkR8vRe2H_WomYfPcFeEqTZpy4FPaR/view
+Heroku: https://sleepy-falls-36106.herokuapp.com/
 
     
 ## Table of Contents
